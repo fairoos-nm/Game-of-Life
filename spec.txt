@@ -1,11 +1,22 @@
 Game of Life spec:
+two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead,
 
+1. Make a matrix.
+2. Provide the initial pattern.
+3. Apply the rules up on it. 
 
 Rules:
 
-0. Any live cell with fewer than two live neighbors dies, as if by underpopulation.
-1. Any live cell with two or three live neighbors lives on to the next generation.
-2. Any live cell with more than three live neighbors dies, as if by overpopulation.
-3. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+	0. Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+	1. Any live cell with two or three live neighbors lives on to the next generation.
+	2. Any live cell with more than three live neighbors dies, as if by overpopulation.
+	3. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+
+4. print the new pattern.
+5. Go to 3
+
+
+
+
 
 
