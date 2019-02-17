@@ -14,3 +14,7 @@ def test_initial_matrix():
 def test_neighbours():
     assert Game_of_life.neighbours([[0, 0, 0],[1, 1, 1], [0, 0, 0]], [1, 1]) == [[0, 0], [0, 1], [0, 2], [1, 0], [1, 2], [2, 0], [2, 1], [2, 2]]
     assert Game_of_life.neighbours([[0, 0, 0],[1, 1, 1], [0, 0, 0]], [0, 0]) == [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]
+
+
+def real_neighbours():
+    assert Game_of_life.neighbours([[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]])= [[0, 1], [1, 0], [1, 1]]
