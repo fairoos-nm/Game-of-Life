@@ -16,5 +16,5 @@ def test_neighbours():
     assert Game_of_life.neighbours([[0, 0, 0],[1, 1, 1], [0, 0, 0]], [0, 0]) == [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]
 
 
-def real_neighbours():
+def test_real_neighbours():
     assert Game_of_life.neighbours([[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]])= [[0, 1], [1, 0], [1, 1]]
