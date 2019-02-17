@@ -14,4 +14,15 @@ def initial_matrix(a, matrix1):
                 sub_list[i] = 1
                 return matrix1
 
-        
+position = [1, 1]
+
+def neighbours( matrix1, position):
+    for sub_list in matrix1:
+        for j in range(len(matrix1)):
+            for i in range(len(sub_list)):
+                my_pos = [j, i]
+                if my_pos == position:
+                     neighbours_list = [[j-1, i-1], [j-1, i], [j-1, i+1], [j, i-1], [j, j+1],[j+1, i-1],[j+1, i],[j+1, i+1]]
+                     return neighbours_list
+                    
+ 
