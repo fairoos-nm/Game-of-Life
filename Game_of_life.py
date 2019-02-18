@@ -55,11 +55,11 @@ def apply_rules(initial_stage, positions):
     alive = 1
     dead = 0
     posi = []
-    for 1st_position in positions:
+    for first_position in positions:
         for j in range(len(initial_stage)):
             for i in range(len(row)):
                 print [j, i]
-                if [j, i] == 1st_posi:
+                if [j, i] == first_posi:
                    for row in initial_stage:
                        
         
@@ -72,9 +72,9 @@ def main():
     row = 3
     column = 3
     element = 0
-    1st_matrix = matrix(element, row, column)
+    first_matrix = matrix(element, row, column)
     a = 1
-    initial_stage = initial_matrix(a, 1st_matrix)
+    initial_stage = initial_matrix(a, first_matrix)
     positions = position_of_alive_elements(initial_stage)
     all_neighbors = neighbours( initial_stage, position)
     neighbors = real_neighbours(all_neighbors)
