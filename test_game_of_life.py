@@ -23,5 +23,5 @@ def test_position_of_alive_elements():
     assert Game_of_life.position_of_alive_elements([[0, 0, 0],[1, 1, 1], [0, 0, 0]]) == [[1, 0], [1, 1], [1, 2]]
     assert Game_of_life.position_of_alive_elements([[0, 1, 0],[0, 1, 0], [0, 1, 0]]) == [[0, 1], [1, 1], [2, 1]]
 
-def test_rules():
+def test_apply_rules():
     assert Game_of_life.main([[0, 0, 0],[1, 1, 1], [0, 0, 0]]) == [[0, 1, 0],[0, 1, 0], [0, 1, 0]]
