@@ -1,9 +1,9 @@
  #Game_of_life
 
 
-def neighbours1(matrix1,position):
-    for sub_list in matrix1:
-        for j in range(len(matrix1)):
+def neighbours_of_position(matrix, position):
+    for sub_list in matrix:
+        for j in range(len(matrix)):
             for i in range(len(sub_list)):
                 my_pos = [j, i]
                 if my_pos == position:
@@ -11,9 +11,9 @@ def neighbours1(matrix1,position):
                     
                     return  neighbours_list
 
-def neighbours(matrix1):
-    for sub_list in matrix1:
-        for j in range(len(matrix1)):
+def neighbours(matrix):
+    for sub_list in matrix:
+        for j in range(len(matrix)):
             for i in range(len(sub_list)):
                 my_pos = [j, i]
                 neighbours_list = [[j-1, i-1], [j-1, i], [j-1, i+1], [j, i-1], [j, i+1],[j+1, i-1],[j+1, i],[j+1, i+1]]
@@ -32,43 +32,42 @@ def real_neighbours(neighbours_list):
                 a.remove(i)
     return a
 
-def count_alive_neighbours(metrix):
-    
-    rows = len(metrix)
-    cols = len(metrix[0])
+def count_alive_neighbours(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
     result = [[None for i in range(cols)] for j in range(rows)]
     
-    for i in range(len(metrix)):
-        for j in range(len(metrix[0])):
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
             position = [i,j]
             count = 0
-            neib = real_neighbours(neighbours1(metrix, position))
+            neib = real_neighbours(neighbours_of_position(matrix, position))
             for a in neib:
                 x = a[0]
                 y = a[1]
-                f = metrix[x]
+                f = matrix[x]
                 n = f[y]
                 if n  == 1:
                     count = count + 1        
             result[i][j] = count
     return result
 
-def apply_rules(alive_list, metrix):
+def apply_rules(alive_list, matrix):
     
-    rows = len(metrix)
-    columns = len(metrix[0])    
+    rows = len(matrix)
+    columns = len(matrix[0])    
     for i in range(rows):
         for j in range(columns):
-            if metrix[i][j]:
+            if matrix[i][j]:
                 if alive_list[i][j] < 2 or  alive_list[i][j] > 3:
-                    metrix[i][j] = 0
-            if metrix[i][j]:
+                    matrix[i][j] = 0
+            if matrix[i][j]:
                 if alive_list[i][j] == 3 or alive_list[i][j] == 2:
-                    metrix[i][j] = 1
+                    matrix[i][j] = 1
 
-            if metrix[i][j] == 0 and alive_list[i][j] == 3:
-                metrix[i][j] =1
-    return metrix
+            if matrix[i][j] == 0 and alive_list[i][j] == 3:
+                matrix[i][j] =1
+    return matrix
                 
 def display(board):
     row = len(board)
