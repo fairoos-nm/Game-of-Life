@@ -1,37 +1,6 @@
- # #Game_of_life
+ #Game_of_life
 
-# row = 3
-# column = 3
-# element = 0
-# def matrix(element, row, column):
-#     matrix_out = [[element] * row for i in range(column)]
-#     return matrix_out
 
-# first_matrix = (matrix(element, row, column))
-
-# print (first_matrix)
-
-# def initial_matrix(position, matrix1):
-#     for row_no in range(len(matrix1)):
-#         if row_no == 1:
-#             matrix1[1] = [1, 1, 1]
-#     return matrix1
-
-# initial_stage = initial_matrix(first_matrix)
-# print(initial_stage)
-
-# def position_of_alive_elements(initial_matrix):
-#     alive = 1
-#     position = []
-#     j = 0
-#     for x in initial_matrix:
-#         i = 0
-#         for y in x:
-#             if y == 1:
-#                 position.append([j, i])
-#             i = i + 1
-#         j = j + 1
-#     return position
 def neighbours1(matrix1,position):
     for sub_list in matrix1:
         for j in range(len(matrix1)):
