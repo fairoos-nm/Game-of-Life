@@ -89,9 +89,9 @@ def count_alive_neighbours(metrix):
 
 
 
-metrix = [[0, 0, 0], [1, 1, 1], [0, 0 , 0]]
+#metrix = [[0, 0, 0], [1, 1, 1], [0, 0 , 0]]
 
-alive_list = count_alive_neighbours(metrix)
+#alive_list = count_alive_neighbours(metrix)
 
 def apply_rules(alive_list, metrix):
     
@@ -111,10 +111,26 @@ def apply_rules(alive_list, metrix):
     return metrix
                 
     
-print(apply_rules(alive_list,metrix))    
-    
+#print(apply_rules(alive_list, metrix))   
 
-# def main():
+
+def display(board):
+    row = len(board)
+    column =  len(board[0])
+    a = ""
+    for i in range(row):
+        for j in range(column):
+            if j == 0:
+                a += "\n"
+            if board[i][j] == 1:
+                a += "0 "
+            if board[i][j] == 0:
+                a += ". "
+            
+    return a
+    
+#print = display(metrix)      
+
 
     
     
