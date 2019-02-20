@@ -11,25 +11,18 @@ def neighbours1(matrix1,position):
                     
                     return  neighbours_list
 
-
-
-
 def neighbours(matrix1):
     for sub_list in matrix1:
         for j in range(len(matrix1)):
             for i in range(len(sub_list)):
                 my_pos = [j, i]
-                #if my_pos == position:
                 neighbours_list = [[j-1, i-1], [j-1, i], [j-1, i+1], [j, i-1], [j, i+1],[j+1, i-1],[j+1, i],[j+1, i+1]]
                     
                 return  neighbours_list
 
-
-                 
 def real_neighbours(neighbours_list):
     a = []
     for neighbour in neighbours_list:
-        # print (neighbour)
         for x in neighbour:
             if x < 0 or x > 2:
                 neighbour.remove(x)
@@ -38,8 +31,6 @@ def real_neighbours(neighbours_list):
             if len(i) == 1:
                 a.remove(i)
     return a
-
-
 
 def count_alive_neighbours(metrix):
     
@@ -52,27 +43,15 @@ def count_alive_neighbours(metrix):
             position = [i,j]
             count = 0
             neib = real_neighbours(neighbours1(metrix, position))
-           
             for a in neib:
                 x = a[0]
                 y = a[1]
-                #print (a, x, y)
                 f = metrix[x]
-                #print(f)
                 n = f[y]
-                #print(n)
                 if n  == 1:
                     count = count + 1        
             result[i][j] = count
     return result
-
-
-
-
-
-#metrix = [[0, 0, 0], [1, 1, 1], [0, 0 , 0]]
-
-#alive_list = count_alive_neighbours(metrix)
 
 def apply_rules(alive_list, metrix):
     
@@ -91,10 +70,6 @@ def apply_rules(alive_list, metrix):
                 metrix[i][j] =1
     return metrix
                 
-    
-#print(apply_rules(alive_list, metrix))   
-
-
 def display(board):
     row = len(board)
     column =  len(board[0])
@@ -110,13 +85,3 @@ def display(board):
             
     return a
     
-#print = display(metrix)      
-
-
-    
-    
-#     print
-#     positions = position_of_alive_elements(initial_stage)
-#     all_neighbors = neighbours( initial_stage, position)
-#     neighbors = real_neighbours(all_neighbors)
-#     print(neighbours)
