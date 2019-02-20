@@ -30,3 +30,15 @@ def test_apply_rule():
     alive_list = [[2,3,2], [1,2,1], [2,3,2]]
     metrix = [[0, 0, 0], [1, 1, 1], [0, 0 , 0]]
     assert Game_of_life.apply_rules(alive_list, metrix) == [[0, 1, 0], [0, 1, 0], [0, 1, 0]] 
+
+
+def test_display():
+    matrix = [[0, 1, 0], [0, 1, 0], [0, 1 , 0]]
+    assert Game_of_life.display(matrix) == """ . . .
+                                               0 0 0
+                                               . . ."""
+ matrix = [[0, 0, 0], [1, 1, 1], [0, 0 , 0]]
+    assert Game_of_life.display(matrix) ==  """. 0 .
+                                               . 0 .
+                                               . 0 ."""
+                                            
