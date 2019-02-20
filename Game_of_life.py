@@ -20,21 +20,19 @@
 # initial_stage = initial_matrix(first_matrix)
 # print(initial_stage)
 
-def position_of_alive_elements(initial_matrix):
-    alive = 1
-    position = []
-    j = 0
-    for x in initial_matrix:
-        i = 0
-        for y in x:
-            if y == 1:
-                position.append([j, i])
-            i = i + 1
-        j = j + 1
-    return position 
-
-
-def neighbours( matrix1, position):
+# def position_of_alive_elements(initial_matrix):
+#     alive = 1
+#     position = []
+#     j = 0
+#     for x in initial_matrix:
+#         i = 0
+#         for y in x:
+#             if y == 1:
+#                 position.append([j, i])
+#             i = i + 1
+#         j = j + 1
+#     return position
+def neighbours1(matrix1,position):
     for sub_list in matrix1:
         for j in range(len(matrix1)):
             for i in range(len(sub_list)):
@@ -43,6 +41,19 @@ def neighbours( matrix1, position):
                     neighbours_list = [[j-1, i-1], [j-1, i], [j-1, i+1], [j, i-1], [j, i+1],[j+1, i-1],[j+1, i],[j+1, i+1]]
                     
                     return  neighbours_list
+
+
+
+
+def neighbours(matrix1):
+    for sub_list in matrix1:
+        for j in range(len(matrix1)):
+            for i in range(len(sub_list)):
+                my_pos = [j, i]
+                #if my_pos == position:
+                neighbours_list = [[j-1, i-1], [j-1, i], [j-1, i+1], [j, i-1], [j, i+1],[j+1, i-1],[j+1, i],[j+1, i+1]]
+                    
+                return  neighbours_list
 
 
                  
@@ -71,7 +82,8 @@ def count_alive_neighbours(metrix):
         for j in range(len(metrix[0])):
             position = [i,j]
             count = 0
-            neib = real_neighbours(neighbours(metrix, position))
+            neib = real_neighbours(neighbours1(metrix, position))
+           
             for a in neib:
                 x = a[0]
                 y = a[1]
