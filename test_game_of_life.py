@@ -3,11 +3,12 @@
 import Game_of_life
 
 
-
+def test_neighbours1():
+     assert Game_of_life.neighbours1([[0, 0, 0],[1, 1, 1], [0, 0, 0]], [1, 1]) == [[0, 0], [0, 1], [0, 2], [1, 0], [1, 2], [2, 0], [2, 1], [2, 2]]
 
     
 def test_neighbours():
-    #assert Game_of_life.neighbours([[0, 0, 0],[1, 1, 1], [0, 0, 0]], [1, 1]) == [[0, 0], [0, 1], [0, 2], [1, 0], [1, 2], [2, 0], [2, 1], [2, 2]]
+   
     assert Game_of_life.neighbours([[0, 0, 0],[1, 1, 1], [0, 0, 0]]) == [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]
 
 
