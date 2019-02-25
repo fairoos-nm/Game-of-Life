@@ -52,11 +52,11 @@ def count_alive_neighbours(matrix):
             count = 0
             neib = real_neighbours(neighbours_of_position(matrix, position))
             for a in neib:
-                x = a[0]
-                y = a[1]
-                f = matrix[x]
-                n = f[y]
-                if n  == 1:
+                row_position = a[0]
+                column_position = a[1]
+                row = matrix[row_position]
+                element = row[column_position]
+                if element  == 1:
                     count = count + 1        
             result[i][j] = count
     return result
