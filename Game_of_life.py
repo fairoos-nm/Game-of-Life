@@ -81,7 +81,7 @@ def display(board):
             if j == 0:
                 showcase += "\n"
             if board[i][j] == 1:
-                showcase += "0 "
+                showcase += "\u0fc7 "
             if board[i][j] == 0:
                 showcase += ". "
             
